@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>$SHROOM 🍄 | The First Trippy Pump Token</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Orbitron',sans-serif;
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.75)
+        ),
+        url('background.png');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    color:white;
+    overflow-x:hidden;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.card{
+    max-width:900px;
+    width:100%;
+
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
+
+    padding:50px;
+
+    text-align:center;
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.12),
+        0 0 60px rgba(255,255,255,.05);
+}
+
+.logo{
+    font-size:clamp(3rem,10vw,6rem);
+    font-weight:900;
+    margin-bottom:15px;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px white;
+}
+
+.tagline{
+    font-size:1.4rem;
+    margin-bottom:35px;
+    opacity:.95;
+}
+
+.message{
+    font-size:1.15rem;
+    line-height:1.9;
+}
+
+.message strong{
+    color:white;
+    font-size:1.3rem;
+}
+
+.contract-box{
+    margin-top:40px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:16px;
+
+    padding:25px;
+}
+
+.contract-label{
+    font-size:.85rem;
+    opacity:.75;
+    margin-bottom:12px;
+}
+
+.contract{
+    word-break:break-all;
+    font-size:.95rem;
+    line-height:1.6;
+}
+
+.copy-btn{
+    margin-top:18px;
+
+    border:none;
+    border-radius:12px;
+
+    padding:14px 28px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+    font-size:1rem;
+
+    transition:.25s;
+}
+
+.copy-btn:hover{
+    transform:translateY(-2px);
+}
+
+.buy-btn{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:18px 40px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    color:black;
+    background:white;
+
+    font-weight:900;
+    font-size:1.1rem;
+
+    transition:.25s;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.45);
+}
+
+.buy-btn:hover{
+    transform:translateY(-4px) scale(1.05);
+}
+
+.socials{
+    margin-top:25px;
+}
+
+.social-link{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.social-link:hover{
+    text-shadow:
+        0 0 10px white,
+        0 0 20px white;
+}
+
+.cta{
+    margin-top:35px;
+
+    font-size:1.5rem;
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.footer{
+    margin-top:40px;
+    opacity:.7;
+    font-size:.85rem;
+}
+
+.glow{
+    animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:
+            0 0 10px white;
+    }
+
+    to{
+        text-shadow:
+            0 0 20px white,
+            0 0 40px white,
+            0 0 60px white;
+    }
+}
+
+@media(max-width:700px){
+
+    .card{
+        padding:30px 20px;
+    }
+
+    .message{
+        font-size:1rem;
+    }
+
+    .tagline{
+        font-size:1.1rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="card">
+
+    <div class="logo glow">
+        🍄 $SHROOM
+    </div>
+
+    <div class="tagline">
+        The First Token Ever Created on Trippy Pump
+    </div>
+
+    <div class="message">
+
+        <p>🍄 The Original SHROOM.</p>
+
+        <br>
+
+        <p>The first token ever created on Trippy Pump.</p>
+
+        <p>Not the second. Not the third.</p>
+
+        <p><strong>The first.</strong></p>
+
+        <br>
+
+        <p>Early believers will be remembered.</p>
+
+        <p>Holders will be rewarded.</p>
+
+        <br>
+
+        <p><strong>MAKE INJ GREAT AGAIN.</strong></p>
+
+    </div>
+
+    <div class="contract-box">
+
+        <div class="contract-label">
+            CONTRACT ADDRESS
+        </div>
+
+        <div class="contract" id="contract">
+            factory/inj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte/shroom_1_391dfd403560de90
+        </div>
+
+        <button class="copy-btn" onclick="copyContract()">
+            Copy Contract
+        </button>
+
+    </div>
+
+    <a
+        href="https://pump.trippyinj.xyz/launch/1"
+        target="_blank"
+        class="buy-btn"
+    >
+        🚀 BUY $SHROOM
+    </a>
+
+    <div class="socials">
+
+        <a
+            href="https://x.com/96Reimy58764"
+            target="_blank"
+            class="social-link"
+        >
+            Follow Mushmoon on X
+        </a>
+
+    </div>
+
+    <div class="cta">
+        🌕 TO THE MOON 🍄
+    </div>
+
+    <div class="footer">
+        First on Trippy Pump • Powered by Injective
+    </div>
+
+</div>
+
+</section>
+
+<script>
+
+function copyContract(){
+
+    const contract =
+    "factory/inj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte/shroom_1_391dfd403560de90";
+
+    navigator.clipboard.writeText(contract);
+
+    alert("Contract copied!");
+}
+
+</script>
+
+</body>
+</html>
