@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mushmoon ($MOON) — The First Token Ever Launched on Trippy Pump</title>
+<meta name="description" content="Mushmoon ($MOON) — the first memecoin ever launched on Trippy Pump, born from the roots of Shroom and Choice. Shroom to the Moon." />
+<meta property="og:title" content="Mushmoon ($MOON)" />
+<meta property="og:description" content="The first memecoin ever launched on Trippy Pump. Shroom to the Moon." />
+<meta property="og:type" content="website" />
+<style>
+  :root{
+    --bg-deep:#050914;
+    --bg-mid:#0b1230;
+    --moon:#f5ecd0;
+    --moon-glow:#fff6dc;
+    --red:#c22b2b;
+    --red-dark:#8f1d1d;
+    --cream:#f3e6c9;
+    --accent:#ffd76a;
+    --text-dim:#a9b3d6;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(255,246,220,0.12), transparent 55%),
+      linear-gradient(180deg,var(--bg-deep) 0%, var(--bg-mid) 55%, #05070f 100%);
+    color:var(--cream);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+  .stars{
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, #fff, transparent),
+      radial-gradient(1px 1px at 80% 10%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 60% 30%, #fff, transparent),
+      radial-gradient(1px 1px at 30% 60%, #fff, transparent),
+      radial-gradient(1px 1px at 90% 70%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 20% 85%, #fff, transparent),
+      radial-gradient(1px 1px at 50% 90%, #fff, transparent),
+      radial-gradient(1px 1px at 75% 45%, #fff, transparent),
+      radial-gradient(1px 1px at 5% 45%, #fff, transparent),
+      radial-gradient(1px 1px at 95% 25%, #fff, transparent);
+    opacity:0.7;
+  }
+  header{
+    position:relative;z-index:1;
+    text-align:center;
+    padding:70px 20px 40px;
+  }
+  nav{
+    position:relative;z-index:2;
+    display:flex;justify-content:center;gap:28px;
+    padding:22px 16px;
+    font-size:0.95rem;
+    letter-spacing:0.03em;
+  }
+  nav a{
+    color:var(--text-dim);
+    text-decoration:none;
+    transition:color .2s ease;
+  }
+  nav a:hover{color:var(--accent);}
+  .moon-wrap{
+    position:relative;
+    width:280px;height:280px;
+    margin:0 auto 10px;
+  }
+  .moon{
+    position:absolute;inset:0;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 35% 30%, #fffdf4, var(--moon) 55%, #d8cba2 100%);
+    box-shadow:
+      0 0 60px 20px rgba(255,246,220,0.35),
+      0 0 140px 60px rgba(255,246,220,0.15);
+  }
+  .moon:before, .moon:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(160,150,120,0.25);
+  }
+  .moon:before{width:46px;height:46px;top:60px;left:70px;}
+  .moon:after{width:30px;height:30px;top:150px;left:170px;box-shadow:70px 40px 0 -6px rgba(160,150,120,0.2), -60px 60px 0 -10px rgba(160,150,120,0.18);}
+  .mushroom{
+    position:relative;z-index:2;
+    margin:-70px auto 0;
+    width:220px;
+  }
+  .mushroom svg{width:100%;display:block;filter:drop-shadow(0 10px 25px rgba(0,0,0,0.5));}
+  h1.brand{
+    font-size:3.2rem;
+    margin:18px 0 6px;
+    letter-spacing:0.02em;
+    background:linear-gradient(180deg,#fff, var(--accent));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    font-weight:800;
+  }
+  .ticker{
+    display:inline-block;
+    font-size:1.1rem;
+    color:var(--bg-deep);
+    background:var(--accent);
+    padding:4px 16px;
+    border-radius:999px;
+    font-weight:700;
+    letter-spacing:0.05em;
+    margin-bottom:22px;
+  }
+  .tagline{
+    max-width:640px;
+    margin:0 auto 34px;
+    font-size:1.15rem;
+    line-height:1.6;
+    color:var(--text-dim);
+  }
+  .cta-row{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:16px;
+    margin-bottom:10px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 30px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:1.05rem;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+    border:1px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-buy{
+    background:linear-gradient(135deg,var(--red), var(--red-dark));
+    color:#fff;
+    box-shadow:0 8px 24px rgba(194,43,43,0.45);
+  }
+  .btn-buy:hover{box-shadow:0 12px 30px rgba(194,43,43,0.6);}
+  .btn-ghost{
+    background:rgba(255,255,255,0.06);
+    color:var(--cream);
+    border:1px solid rgba(255,255,255,0.18);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.12);}
+  section{
+    position:relative;z-index:1;
+    max-width:900px;
+    margin:0 auto;
+    padding:50px 24px;
+  }
+  .card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.09);
+    border-radius:20px;
+    padding:36px;
+    backdrop-filter:blur(6px);
+  }
+  .section-title{
+    font-size:1.7rem;
+    margin-top:0;
+    margin-bottom:16px;
+    color:#fff;
+    font-weight:800;
+  }
+  .story p{
+    line-height:1.75;
+    font-size:1.05rem;
+    color:var(--text-dim);
+    margin-bottom:16px;
+  }
+  .story strong{color:var(--accent);}
+  .ca-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    background:rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:12px;
+    padding:14px 18px;
+    margin:18px 0 22px;
+  }
+  .ca-box code{
+    flex:1;
+    min-width:220px;
+    font-family:'Consolas',monospace;
+    font-size:0.85rem;
+    color:var(--accent);
+    word-break:break-all;
+  }
+  .copy-btn{
+    background:rgba(255,215,106,0.15);
+    color:var(--accent);
+    border:1px solid rgba(255,215,106,0.4);
+    padding:8px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+    font-size:0.85rem;
+    white-space:nowrap;
+    transition:background .2s ease;
+  }
+  .copy-btn:hover{background:rgba(255,215,106,0.28);}
+  .copy-btn.copied{background:#3fae5c;color:#fff;border-color:#3fae5c;}
+  .grid-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+  }
+  .link-card{
+    display:block;
+    text-decoration:none;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.09);
+    border-radius:16px;
+    padding:22px;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .link-card:hover{transform:translateY(-3px);background:rgba(255,255,255,0.08);}
+  .link-card .icon{font-size:1.6rem;margin-bottom:8px;display:block;}
+  .link-card .title{color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:4px;}
+  .link-card .sub{color:var(--text-dim);font-size:0.9rem;}
+  footer{
+    position:relative;z-index:1;
+    text-align:center;
+    padding:40px 20px 60px;
+    color:var(--text-dim);
+    font-size:0.85rem;
+  }
+  footer a{color:var(--accent);text-decoration:none;}
+  .badge-row{
+    display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:8px;
+  }
+  .badge{
+    font-size:0.78rem;
+    color:var(--text-dim);
+    border:1px solid rgba(255,255,255,0.12);
+    padding:4px 12px;
+    border-radius:999px;
+  }
+</style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <nav>
+    <a href="#story">Story</a>
+    <a href="#buy">Buy $MOON</a>
+    <a href="https://pump.trippyinj.xyz/launch/1" target="_blank" rel="noopener">Live Chart</a>
+    <a href="https://x.com/MushmoonINJ" target="_blank" rel="noopener">X / Twitter</a>
+  </nav>
+
+  <header>
+    <div class="moon-wrap"><div class="moon"></div></div>
+    <div class="mushroom">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 100 C20 40 60 15 100 15 C140 15 180 40 180 100 C180 110 170 115 155 112 C130 106 70 106 45 112 C30 115 20 110 20 100 Z" fill="url(#capGrad)"/>
+        <defs>
+          <radialGradient id="capGrad" cx="35%" cy="25%" r="80%">
+            <stop offset="0%" stop-color="#e14a4a"/>
+            <stop offset="60%" stop-color="#c22b2b"/>
+            <stop offset="100%" stop-color="#8f1d1d"/>
+          </radialGradient>
+        </defs>
+        <circle cx="65" cy="55" r="9" fill="#f3e6c9"/>
+        <circle cx="105" cy="40" r="7" fill="#f3e6c9"/>
+        <circle cx="140" cy="60" r="8" fill="#f3e6c9"/>
+        <circle cx="95" cy="75" r="6" fill="#f3e6c9"/>
+        <circle cx="150" cy="90" r="5" fill="#f3e6c9"/>
+        <circle cx="45" cy="85" r="5" fill="#f3e6c9"/>
+        <path d="M78 108 L122 108 L128 175 C128 190 72 190 72 175 Z" fill="#f3e6c9"/>
+        <path d="M78 108 L122 108 L120 122 L80 122 Z" fill="#e5d6ac"/>
+      </svg>
+    </div>
+    <h1 class="brand">MUSHMOON</h1>
+    <div class="ticker">$MOON</div>
+    <p class="tagline">
+      Every legend starts somewhere. Ours started underground — the first token
+      ever seeded on Trippy Pump, grown from the roots of <strong style="color:var(--accent)">Shroom</strong>
+      and <strong style="color:var(--accent)">Choice</strong>. No hype, no noise — just an origin story
+      turning into a trajectory. <br/><strong style="color:var(--accent)">Shroom to the Moon.</strong>
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-buy" href="https://choice.exchange/trade?output=factory%2Finj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte%2Fshroom_1_391dfd403560de90&pool=inj185gyh353ae9kvtrm9xfwfxy3fnr547f2qndqg8" target="_blank" rel="noopener">🚀 Buy $MOON</a>
+      <a class="btn btn-ghost" href="https://x.com/MushmoonINJ" target="_blank" rel="noopener">𝕏 Follow on X</a>
+    </div>
+    <div class="badge-row">
+      <span class="badge">Chain: Injective</span>
+      <span class="badge">Launched via Trippy Pump</span>
+      <span class="badge">Trading on Choice Exchange</span>
+    </div>
+  </header>
+
+  <section id="story">
+    <div class="card story">
+      <h2 class="section-title">Shroom to the Moon 🍄🌕</h2>
+      <p>
+        Before there were charts, before there was hype — there was a spore. Mushmoon is
+        <strong>the very first token ever launched on Trippy Pump</strong>, planted at the exact
+        moment Shroom and Choice took root on Injective. It's not a copy, not a follow-up trend —
+        it's the origin block. The genesis.
+      </p>
+      <p>
+        We're not here to chase the moon blindly. We're here because this community grew
+        something real from the ground up — and that's worth remembering, holding, and building
+        on. Mushmoon carries that history forward: humble beginnings, relentless growth,
+        pointed straight up.
+      </p>
+      <p>
+        <strong>Plant it. Hold it. Watch it grow.</strong> Shroom to the Moon.
+      </p>
+    </div>
+  </section>
+
+  <section id="buy">
+    <div class="card">
+      <h2 class="section-title">Get $MOON</h2>
+      <p style="color:var(--text-dim);margin-top:0;">Contract / Denom address on Injective:</p>
+      <div class="ca-box">
+        <code id="ca-text">factory/inj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte/shroom_1_391dfd403560de90</code>
+        <button class="copy-btn" onclick="copyCA()" id="copy-btn">Copy CA</button>
+      </div>
+      <div class="cta-row" style="justify-content:flex-start;">
+        <a class="btn btn-buy" href="https://choice.exchange/trade?output=factory%2Finj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte%2Fshroom_1_391dfd403560de90&pool=inj185gyh353ae9kvtrm9xfwfxy3fnr547f2qndqg8" target="_blank" rel="noopener">🚀 Buy $MOON on Choice</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="links">
+    <h2 class="section-title" style="text-align:center;">Find Us</h2>
+    <div class="grid-links">
+      <a class="link-card" href="https://x.com/MushmoonINJ" target="_blank" rel="noopener">
+        <span class="icon">𝕏</span>
+        <div class="title">X / Twitter</div>
+        <div class="sub">@MushmoonINJ — follow the journey</div>
+      </a>
+      <a class="link-card" href="https://pump.trippyinj.xyz/launch/1" target="_blank" rel="noopener">
+        <span class="icon">📈</span>
+        <div class="title">Trippy Pump</div>
+        <div class="sub">Live chart, holders & launch page</div>
+      </a>
+      <a class="link-card" href="https://choice.exchange/trade?output=factory%2Finj13j2rpnlwl30c02d4pzukykwfeyyhelvry9cqte%2Fshroom_1_391dfd403560de90&pool=inj185gyh353ae9kvtrm9xfwfxy3fnr547f2qndqg8" target="_blank" rel="noopener">
+        <span class="icon">🔁</span>
+        <div class="title">Choice Exchange</div>
+        <div class="sub">Trade $MOON directly</div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mushmoon ($MOON) is a community memecoin on Injective. No promises, no guarantees —
+    just a good origin story and a shared sense of humor. Always do your own research.</p>
+    <p><a href="https://x.com/MushmoonINJ" target="_blank" rel="noopener">@MushmoonINJ</a> ·
+    <a href="https://pump.trippyinj.xyz/launch/1" target="_blank" rel="noopener">Trippy Pump</a></p>
+  </footer>
+
+  <script>
+    function copyCA(){
+      const text = document.getElementById('ca-text').innerText;
+      navigator.clipboard.writeText(text).then(function(){
+        const btn = document.getElementById('copy-btn');
+        btn.innerText = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function(){
+          btn.innerText = 'Copy CA';
+          btn.classList.remove('copied');
+        }, 1800);
+      });
+    }
+  </script>
+</body>
+</html>
